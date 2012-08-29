@@ -105,9 +105,20 @@ void Pathfinder::inputPath()
 	cout << "Distance:";
 	cin >> p->distance;
 	//condition
+	p->condition = 0;
 	//type
+	p->type = 0;
+
 	paths.push_back(p);
 	placeWithID(p->Aid)->addPath(p);
 	placeWithID(p->Bid)->addPath(p);
+}
+
+route Pathfinder::ShortestRoute( int from, int to )
+{
+	place *From = placeWithID(from);
+	place *To = placeWithID(to);
+
+
 }
 

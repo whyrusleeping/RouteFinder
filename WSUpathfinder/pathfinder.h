@@ -3,6 +3,7 @@
 
 #include "place.h"
 #include "path.h"
+#include "route.h"
 #include <fstream>
 #include <iostream>
 
@@ -22,6 +23,8 @@ public:
 	void inputPath();
 
 	void Save(string filename);
+
+	route ShortestRoute(int from, int to);
 
 	vector<place*> places;
 	vector<path*> paths;

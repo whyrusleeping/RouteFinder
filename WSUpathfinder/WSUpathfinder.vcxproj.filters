@@ -27,6 +27,9 @@
     <ClInclude Include="pathfinder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="route.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="place.cpp">
@@ -42,6 +45,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="coordinate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="route.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
