@@ -18,17 +18,26 @@ place::place(string serialized)
 	}
 	parts.push_back(temp);
 	ID = atoi(parts[0].c_str());
-	name = parts[1];
+	Name = parts[1];
 	Lat = string_to_double(parts[2]);
 	Long = string_to_double(parts[3]);
-	elevation = atoi(parts[4].c_str());
+	Elevation = atoi(parts[4].c_str());
 
+}
+
+place::place( string name, double lat, double lon, int elevation, int nId )
+{
+	Name = name;
+	Lat = lat;
+	Long = lon;
+	ID = nId;
+	Elevation = elevation;
 }
 
 string place::Serialize()
 {
 	stringstream ss;
-	ss << ID << "|" << name << "|" << Lat << "|" << Long << "|" << elevation;
+	ss << ID << "|" << Name << "|" << Lat << "|" << Long << "|" << Elevation;
 	return ss.str();
 }
 

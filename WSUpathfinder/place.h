@@ -16,14 +16,15 @@ class place
 {
 public:
 	place(string serialized);
+	place(string name, double lat, double lon, int elevation, int nId);
 	string Serialize();
 	void addPath(path *p);
 	
 	int ID;
 
 private:
-	string name;
-	int elevation;
+	string Name;
+	int Elevation;
 	double Lat;
 	double Long;
 
