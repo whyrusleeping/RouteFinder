@@ -6,17 +6,19 @@
 #include <sstream>
 #include <cstdlib>
 #include "path.h"
+#include "coordinate.h"
 
 using std::string;
 using std::vector;
 using std::stringstream;
 
+class path;
 
 class place
 {
 public:
 	place(string serialized);
-	place(string name, double lat, double lon, int elevation, int nId);
+	place(string name, string lat, string lon, int elevation, int nId);
 	string Serialize();
 	void addPath(path *p);
 	
@@ -25,13 +27,9 @@ public:
 private:
 	string Name;
 	int Elevation;
-	double Lat;
-	double Long;
+	coordinate *coord;
 
 	vector<path*> pathsToHere;
-	
-
-
 };
 
 double string_to_double( const std::string& s );

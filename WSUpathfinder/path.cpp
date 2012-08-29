@@ -1,5 +1,10 @@
 #include "path.h"
 
+path::path()
+{
+
+}
+
 path::path(string serialized)
 {
 	vector<string> parts;

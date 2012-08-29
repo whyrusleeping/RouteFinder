@@ -23,9 +23,10 @@ public:
 
 	void Save(string filename);
 
-private:
 	vector<place*> places;
 	vector<path*> paths;
+
+private:
 
 	place* placeWithID(int pid);
 	int getNextId();

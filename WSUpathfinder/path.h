@@ -1,7 +1,12 @@
 #ifndef PATH_H
 #define PATH_H
 
+#include <string>
 #include "place.h"
+
+using std::string;
+
+class place;
 
 class path
 {

@@ -19,17 +19,15 @@ place::place(string serialized)
 	parts.push_back(temp);
 	ID = atoi(parts[0].c_str());
 	Name = parts[1];
-	Lat = string_to_double(parts[2]);
-	Long = string_to_double(parts[3]);
+	coord = new coordinate(parts[2],parts[3]);
 	Elevation = atoi(parts[4].c_str());
 
 }
 
-place::place( string name, double lat, double lon, int elevation, int nId )
+place::place( string name, string lat, string lon, int elevation, int nId )
 {
 	Name = name;
-	Lat = lat;
-	Long = lon;
+	coord = new coordinate(lat, lon);
 	ID = nId;
 	Elevation = elevation;
 }
@@ -37,7 +35,7 @@ place::place( string name, double lat, double lon, int elevation, int nId )
 string place::Serialize()
 {
 	stringstream ss;
-	ss << ID << "|" << Name << "|" << Lat << "|" << Long << "|" << Elevation;
+	ss << ID << "|" << Name << "|" << coord->lattitude << "|" << coord->longitude << "|" << Elevation;
 	return ss.str();
 }
 

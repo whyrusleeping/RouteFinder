@@ -38,5 +38,16 @@
     <ClCompile Include="pathfinder.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="coordinate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="places.ppf">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

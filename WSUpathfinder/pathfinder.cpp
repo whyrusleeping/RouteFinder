@@ -13,7 +13,7 @@ Pathfinder::Pathfinder(string mapInfoFile)
 	place *pl = nullptr;
 	
 	getline(i, line);
-	while(line != "!PATHS:")
+	while(line != "PATHS:")
 	{
 		pl = new place(line);
 		places.push_back(pl);
@@ -64,16 +64,16 @@ void Pathfinder::inputPlace()
 {
 	string name;
 	int id;
-	double longitude;
-	double lattitude;
+	string longitude;
+	string lattitude;
 	int elevation;
-
+	flushall();
 	cout << "Enter a new place!\nName:";
-	cin >> name;
-	cout << "Longitude (floating point number, no minutes/seconds):";
-	cin >> longitude;
+	getline(cin, name);
+	cout << "Longitude";
+	getline(cin, longitude);
 	cout << "Lattitude:";
-	cin >> lattitude;
+	getline(cin, lattitude);
 	cout << "Elevation (feet):";
 	cin >> elevation;
 	
@@ -93,5 +93,21 @@ int Pathfinder::getNextId()
 		}
 	}
 	return maxID + 1;
+}
+
+void Pathfinder::inputPath()
+{
+	path *p = new path();
+	cout << "Enter a new path!\nfrom (place ID):";
+	cin >> p->Aid;
+	cout << "To:";
+	cin >> p->Bid;
+	cout << "Distance:";
+	cin >> p->distance;
+	//condition
+	//type
+	paths.push_back(p);
+	placeWithID(p->Aid)->addPath(p);
+	placeWithID(p->Bid)->addPath(p);
 }
 
